@@ -1,6 +1,6 @@
 <?php
 
-class AdminController extends Controller
+class AdminController extends EController
 {
 	public $defaultAction = 'admin';
 	public $layout='//layouts/column2';
