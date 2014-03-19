@@ -1,13 +1,13 @@
 {
-    "name": "uldisn/yii-user",
+    "name": "lehandr/yii-user",
     "description": "User management module",
     "keywords": ["user","yii","phundament"],
     "type": "yii-extension",
     "license": "BSD-2-Clause",
     "authors": [
         {
-            "name": "Mikhail Mangushev",
-            "email": "development@2mx.org"
+            "name": "Alexey Naydenko",
+            "email": "lehandr@gmail.com"
         }
     ]
 }
