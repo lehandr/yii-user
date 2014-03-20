@@ -25,8 +25,7 @@ class LoginController extends EController
 				}
 			}
 			// display the login form
-			//$this->render('/user/login',array('model'=>$model));
-			$this->render('/user/ace_login',array('model'=>$model));
+			$this->render('/user/login',array('model'=>$model));
 		} else
 			$this->redirect(Yii::app()->controller->module->returnUrl);
 	}

@@ -48,19 +48,10 @@ class ProfileController extends EController
 	public function actionProfile()
 	{
 		$model = $this->loadUser();
-        if (DbrUser::isCustomerOfficeUser()) {
-            $this->contentHeader = UserModule::t('Your profile');
-            $this->layout='//layouts/ace';
-            $this->render('ace_profile', array(
-                'model' => $model,
-                'profile' => $model->profile,
-            ));
-        } else {
-            $this->render('profile', array(
-                'model' => $model,
-                'profile' => $model->profile,
-            ));
-        }
+        $this->render('profile', array(
+            'model' => $model,
+            'profile' => $model->profile,
+        ));
     }
 
 
@@ -125,17 +116,9 @@ class ProfileController extends EController
 					}
 			}
             
-            if (DbrUser::isCustomerOfficeUser()) {
-                $this->contentHeader = UserModule::t('Change password');
-                $this->layout='//layouts/ace';
-                $this->render('ace_changepassword', array(
-                    'model' => $model,
-                ));
-            } else {
-                $this->render('changepassword', array(
-                    'model' => $model,
-                ));
-            }            
+            $this->render('changepassword', array(
+                'model' => $model,
+            ));
 	    }
 	}
 
