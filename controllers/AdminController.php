@@ -150,7 +150,7 @@ class AdminController extends EController
 	 * Returns the data model based on the primary key given in the GET variable.
 	 * If the data model is not found, an HTTP exception will be raised.
 	 */
-	public function loadModel()
+	public function loadModel($class=__CLASS__, $id=null, $criteria = array(), $exceptionOnNull = true)
 	{
 		if($this->_model===null)
 		{
