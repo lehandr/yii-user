@@ -509,7 +509,7 @@ class ProfileFieldController extends EController
 	}
 	
 	public static function getWidgets($fieldType='') {
-		$basePath=Yii::getPathOfAlias('application.modules.user.components');
+		$basePath=Yii::getPathOfAlias('user.components');
 		$widgets = array();
 		$list = array(''=>UserModule::t('No'));
 		if (self::$_widgets) {
