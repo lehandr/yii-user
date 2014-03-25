@@ -139,7 +139,15 @@ class UserModule extends CWebModule
         'path'=>'zii.widgets.CDetailView',
         'options'=>array(),
     );
-	
+
+    /**
+     * @property what grid view to use as default.
+     */
+    public $defaultActiveForm = array(
+        'path'=>'system.web.widgets.CActiveForm',
+        'options'=>array(),
+    );
+
 	static private $_user;
 	static private $_users=array();
 	static private $_userByName=array();

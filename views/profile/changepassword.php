@@ -17,7 +17,8 @@ $this->menu=array(
 <h1><?php echo UserModule::t("Change password"); ?></h1>
 
 <div class="form">
-<?php $form=$this->beginWidget('CActiveForm', array(
+<?php $defaultActiveForm = Yii::app()->getModule('user')->defaultActiveForm; ?>
+<?php $this->widget($defaultActiveForm['path'], $defaultActiveForm['options'] + array(
 	'id'=>'changepassword-form',
 	'enableAjaxValidation'=>true,
 	'clientOptions'=>array(
