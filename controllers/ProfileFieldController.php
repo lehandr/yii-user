@@ -53,7 +53,7 @@ class ProfileFieldController extends EController
 	 * Register Script
 	 */
 	public function registerScript() {
-		$basePath=Yii::getPathOfAlias('application.modules.user.views.asset');
+		$basePath=Yii::getPathOfAlias('user.views.asset');
 		$baseUrl=Yii::app()->getAssetManager()->publish($basePath);
 		$cs = Yii::app()->getClientScript();
 		$cs->registerCoreScript('jquery');
