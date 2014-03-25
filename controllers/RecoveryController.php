@@ -31,7 +31,7 @@ class RecoveryController extends EController
 								$this->redirect(Yii::app()->controller->module->recoveryUrl);
 							}
 						} 
-						$this->render('changepassword',array('form'=>$form2));
+						$this->render('changepassword',array('model'=>$form2));
 		    		} else {
 		    			Yii::app()->user->setFlash('recoveryMessage',UserModule::t("Incorrect recovery link."));
 						$this->redirect(Yii::app()->controller->module->recoveryUrl);
@@ -59,7 +59,7 @@ class RecoveryController extends EController
 			    			$this->refresh();
 			    		}
 			    	}
-		    		$this->render('recovery',array('form'=>$form));
+		    		$this->render('recovery',array('model'=>$form));
 		    	}
 		    }
 	}

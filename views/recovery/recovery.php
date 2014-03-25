@@ -14,20 +14,25 @@ $this->breadcrumbs=array(
 <?php else: ?>
 
 <div class="form">
-<?php echo CHtml::beginForm(); ?>
+<?php $defaultActiveForm = Yii::app()->getModule('user')->defaultActiveForm; ?>
+<?php $form=$this->beginWidget($defaultActiveForm['path'], $defaultActiveForm['options'] + array(
+    'id'=>'recovery-form',
+)); ?>
 
-	<?php echo CHtml::errorSummary($form); ?>
+	<?php $form->errorSummary($model); ?>
 	
-	<div class="row">
-		<?php echo CHtml::activeLabel($form,'login_or_email'); ?>
-		<?php echo CHtml::activeTextField($form,'login_or_email') ?>
-		<p class="hint"><?php echo UserModule::t("Please enter your login or email addres."); ?></p>
+	<div class="control-group">
+		<?php echo $form->labelEx($model,'login_or_email'); ?>
+        <div class="controls">
+            <?php echo $form->textField($model,'login_or_email') ?>
+            <p class="hint"><?php echo UserModule::t("Please enter your login or email address."); ?></p>
+        </div>
 	</div>
 	
-	<div class="row submit">
+	<div class="control-group submit">
 		<?php echo CHtml::submitButton(UserModule::t("Restore")); ?>
 	</div>
 
-<?php echo CHtml::endForm(); ?>
+<?php $this->endWidget(); ?>
 </div><!-- form -->
 <?php endif; ?>

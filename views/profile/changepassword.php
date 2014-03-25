@@ -29,30 +29,36 @@ $this->menu=array(
 	<p class="note"><?php echo UserModule::t('Fields with <span class="required">*</span> are required.'); ?></p>
 	<?php echo $form->errorSummary($model); ?>
 	
-	<div class="row">
-	<?php echo $form->labelEx($model,'oldPassword'); ?>
-	<?php echo $form->passwordField($model,'oldPassword'); ?>
-	<?php echo $form->error($model,'oldPassword'); ?>
+	<div class="control-group">
+	    <?php echo $form->labelEx($model,'oldPassword',array('class'=>'control-label')); ?>
+        <div class="controls">
+            <?php echo $form->passwordField($model,'oldPassword'); ?>
+            <?php echo $form->error($model,'oldPassword'); ?>
+        </div>
 	</div>
 	
-	<div class="row">
-	<?php echo $form->labelEx($model,'password'); ?>
-	<?php echo $form->passwordField($model,'password'); ?>
-	<?php echo $form->error($model,'password'); ?>
-	<p class="hint">
-	<?php echo UserModule::t("Minimal password length 4 symbols."); ?>
-	</p>
+	<div class="control-group">
+        <?php echo $form->labelEx($model,'password',array('class'=>'control-label')); ?>
+        <div class="controls">
+            <?php echo $form->passwordField($model,'password'); ?>
+            <?php echo $form->error($model,'password'); ?>
+            <p class="hint">
+            <?php echo UserModule::t("Minimal password length 4 symbols."); ?>
+            </p>
+        </div>
 	</div>
 	
-	<div class="row">
-	<?php echo $form->labelEx($model,'verifyPassword'); ?>
-	<?php echo $form->passwordField($model,'verifyPassword'); ?>
-	<?php echo $form->error($model,'verifyPassword'); ?>
+	<div class="control-group">
+        <?php echo $form->labelEx($model,'verifyPassword',array('class'=>'control-label')); ?>
+        <div class="controls">
+            <?php echo $form->passwordField($model,'verifyPassword'); ?>
+            <?php echo $form->error($model,'verifyPassword'); ?>
+        </div>
 	</div>
 	
 	
-	<div class="row submit">
-	<?php echo CHtml::submitButton(UserModule::t("Save")); ?>
+	<div class="control-group submit">
+	    <?php echo CHtml::submitButton(UserModule::t("Save")); ?>
 	</div>
 
 <?php $this->endWidget(); ?>
