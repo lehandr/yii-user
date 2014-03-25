@@ -8,6 +8,33 @@ class UserController extends EController
 	private $_model;
 
 	/**
+	 * @return array action filters
+	 */
+	public function filters()
+	{
+		return CMap::mergeArray(parent::filters(),array(
+			'accessControl', // perform access control for CRUD operations
+		));
+	}
+	/**
+	 * Specifies the access control rules.
+	 * This method is used by the 'accessControl' filter.
+	 * @return array access control rules
+	 */
+	public function accessRules()
+	{
+		return array(
+			array('allow',  // allow all users to perform 'index' and 'view' actions
+				'actions'=>array('index','view'),
+				'expression'=>'(UserModule::isAdmin() || Yii::app()->getModule(\'user\')->showUserList)',
+			),
+			array('deny',  // deny all users
+				'users'=>array('*'),
+			),
+		);
+	}
+
+	/**
 	 * Displays a particular model.
 	 */
 	public function actionView()

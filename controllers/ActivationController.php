@@ -4,7 +4,7 @@ class ActivationController extends EController
 {
 	public $defaultAction = 'activation';
 
-	
+
 	/**
 	 * Activation user account
 	 */
