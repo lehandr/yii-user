@@ -35,7 +35,7 @@
     </div>
 
     <div class="control-group">
-        <?php echo $form->labelExEx($model,'field_size',array('class'=>'control-label')); ?>
+        <?php echo $form->labelEx($model,'field_size',array('class'=>'control-label')); ?>
         <div class="controls">
             <?php echo $form->textField($model,'field_size'); ?>
         </div>
@@ -118,7 +118,7 @@
         </div>
     </div>
 
-    <div class="control-group buttons">
+    <div class="form-actions buttons">
         <?php echo CHtml::submitButton(UserModule::t('Search')); ?>
     </div>
 

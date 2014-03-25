@@ -62,7 +62,7 @@
         </div>
     </div>
 
-    <div class="control-group buttons">
+    <div class="form-actions buttons">
         <?php echo CHtml::submitButton(UserModule::t('Search')); ?>
     </div>
 

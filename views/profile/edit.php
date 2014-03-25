@@ -72,7 +72,7 @@ $this->menu=array(
         </div>
 	</div>
 
-	<div class="control-group buttons">
+	<div class="form-actions buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? UserModule::t('Create') : UserModule::t('Save')); ?>
 	</div>
 
