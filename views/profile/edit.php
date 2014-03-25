@@ -21,7 +21,7 @@ $this->menu=array(
 <?php endif; ?>
 <div class="form">
 <?php $defaultActiveForm = Yii::app()->getModule('user')->defaultActiveForm; ?>
-<?php $this->widget($defaultActiveForm['path'], $defaultActiveForm['options'] + array(
+<?php $form=$this->beginWidget($defaultActiveForm['path'], $defaultActiveForm['options'] + array(
 	'id'=>'profile-form',
 	'enableAjaxValidation'=>true,
 	'htmlOptions' => array('enctype'=>'multipart/form-data'),

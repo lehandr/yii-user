@@ -1,7 +1,7 @@
 <div class="wide form">
 
 <?php $defaultActiveForm = Yii::app()->getModule('user')->defaultActiveForm; ?>
-<?php $this->widget($defaultActiveForm['path'], $defaultActiveForm['options'] + array(
+<?php $form=$this->beginWidget($defaultActiveForm['path'], $defaultActiveForm['options'] + array(
     'action'=>Yii::app()->createUrl($this->route),
     'method'=>'get',
 )); ?>

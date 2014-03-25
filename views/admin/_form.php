@@ -1,7 +1,7 @@
 <div class="form">
 
 <?php $defaultActiveForm = Yii::app()->getModule('user')->defaultActiveForm; ?>
-<?php $this->widget($defaultActiveForm['path'], $defaultActiveForm['options'] + array(
+<?php $form=$this->beginWidget($defaultActiveForm['path'], $defaultActiveForm['options'] + array(
 	'id'=>'user-form',
 	'enableAjaxValidation'=>true,
 	'htmlOptions' => array('enctype'=>'multipart/form-data'),
