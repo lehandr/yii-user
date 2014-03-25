@@ -9,5 +9,8 @@
             "name": "Alexey Naydenko",
             "email": "lehandr@gmail.com"
         }
-    ]
+    ],
+    "require":{
+        "2amigos/yiiwheels":"1.0.3"
+    }
 }
