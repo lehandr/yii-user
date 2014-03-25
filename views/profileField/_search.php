@@ -114,12 +114,12 @@
     <div class="control-group">
         <?php echo $form->label($model,'visible',array('class'=>'control-label')); ?>
         <div class="controls">
-            <?php echo $form->dropDownList($model,'visible',ProfileField::itemAlias('visible'),array('class'=>'btn btn-primary')); ?>
+            <?php echo $form->dropDownList($model,'visible',ProfileField::itemAlias('visible')); ?>
         </div>
     </div>
 
     <div class="form-actions buttons">
-        <?php echo CHtml::submitButton(UserModule::t('Search')); ?>
+        <?php echo CHtml::submitButton(UserModule::t('Search'),array('class'=>'btn btn-primary')); ?>
     </div>
 
 <?php $this->endWidget(); ?>
