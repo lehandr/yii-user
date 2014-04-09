@@ -5,7 +5,8 @@ $this->breadcrumbs=array(
 );
 ?>
 
-<h1><?php echo UserModule::t("Login"); ?></h1>
+<div id="login-container">
+
 
 <?php if(Yii::app()->user->hasFlash('loginMessage')): ?>
 
@@ -15,15 +16,14 @@ $this->breadcrumbs=array(
 
 <?php endif; ?>
 
-<p><?php echo UserModule::t("Please fill out the following form with your login credentials:"); ?></p>
 
-<div class="form">
+<h1><?= Yii::app()->name; ?></h1>
+<div class="form well" id="login">
 <?php echo CHtml::beginForm(); ?>
-
+    <h2><?php echo UserModule::t("Login"); ?></h2>
 	<p class="note"><?php echo UserModule::t('Fields with <span class="required">*</span> are required.'); ?></p>
-	
-	<?php echo CHtml::errorSummary($model); ?>
-	
+
+
 	<div class="control-group">
 		<?php echo CHtml::activeLabelEx($model,'username'); ?>
 		<?php echo CHtml::activeTextField($model,'username') ?>
@@ -40,18 +40,26 @@ $this->breadcrumbs=array(
 		</p>
 	</div>
 	<?php endif; ?>
-	<div class="control-group rememberMe">
-		<?php echo CHtml::activeCheckBox($model,'rememberMe'); ?>
-		<?php echo CHtml::activeLabelEx($model,'rememberMe'); ?>
-	</div>
+
+    <label class="checkbox">
+        <?php echo CHtml::activeCheckBox($model,'rememberMe'); ?> <?php echo CHtml::activeLabelEx($model,'rememberMe'); ?>
+    </label>
+
+
+    <?php if($model->hasErrors()): ?>
+        <div class="alert alert-danger">
+            <?php echo CHtml::errorSummary($model, false); ?>
+        </div>
+    <?php endif; ?>
+
 
 	<div class="control-group submit">
-		<?php echo CHtml::submitButton(UserModule::t("Login")); ?>
+		<?php echo CHtml::submitButton(UserModule::t("Login"), ['class'=>'btn btn-primary btn-large']); ?>
 	</div>
 	
 <?php echo CHtml::endForm(); ?>
 </div><!-- form -->
-
+</div>
 
 <?php
 $form = new CForm(array(

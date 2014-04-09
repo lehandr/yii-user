@@ -1,5 +1,7 @@
 <?php
-
+/**
+ * @var $this \EController
+*/
 class LoginController extends EController
 {
 	public $defaultAction = 'login';
@@ -9,6 +11,7 @@ class LoginController extends EController
 	 */
 	public function actionLogin()
 	{
+        $this->layout  = 'tpl_auth';
 		if (Yii::app()->user->isGuest) {
 			$model=new UserLogin;
 			// collect user input data
